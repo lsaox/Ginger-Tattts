@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — GINGER Tattts</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            old: ['"Pirata One"', 'serif'],
+            body: ['Inter', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body class="bg-black text-white font-body overflow-x-hidden">
+
+<!-- PAGE HERO -->
+<header class="relative py-24 border-b border-white/10">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+
+    <a href="index.html"
+       class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] opacity-70 hover:opacity-100 mb-6">
+      <i class="fa-solid fa-arrow-left text-[11px]"></i>
+      Back to site
+    </a>
+
+    <h1 class="font-old text-6xl sm:text-7xl md:text-8xl mb-6">
+      Contact
+    </h1>
+
+    <p class="max-w-xl mx-auto text-sm opacity-85 leading-relaxed">
+      If you’re interested in getting tattooed, fill this out with your idea and I’ll reach out with availability.
+    </p>
+  </div>
+</header>
+
+<!-- CONTACT CONTENT -->
+<section class="py-24">
+  <div class="max-w-6xl mx-auto px-4">
+
+    <!-- MOBILE HEADER -->
+    <div class="md:hidden max-w-xl mx-auto text-center mb-10">
+      <h2 class="font-old text-5xl mb-4">
+        Book a tattoo
+      </h2>
+      <p class="text-sm opacity-85 leading-relaxed">
+        Flash or custom, just send over what you’re thinking.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-14 items-start">
+
+      <!-- IMAGE -->
+      <div>
+        <img
+          src="assets/artists.png"
+          alt="Tattoo work by Ginger Tattts"
+          class="w-full h-auto rounded-2xl object-cover"
+        />
+      </div>
+
+      <!-- FORM -->
+      <div class="max-w-xl mx-auto w-full">
+
+        <!-- DESKTOP HEADER -->
+        <div class="hidden md:block mb-8">
+          <h2 class="font-old text-5xl sm:text-6xl mb-4">
+            Book a tattoo
+          </h2>
+          <p class="text-sm opacity-85 leading-relaxed">
+            Flash or custom. Include size, placement, and any reference images if you have them.
+          </p>
+        </div>
+
+        <form
+          name="tattoo-request"
+          method="POST"
+          data-netlify="true"
+          enctype="multipart/form-data"
+          class="space-y-5"
+        >
+          <input type="hidden" name="form-name" value="tattoo-request" />
+
+          <!-- NAME -->
+          <div>
+            <label class="block text-xs tracking-widest uppercase mb-2 opacity-80">
+              Name
+            </label>
+            <input
+              type="text"
+              name="name"
+              required
+              class="w-full bg-transparent border border-white/25 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-white"
+            />
+          </div>
+
+          <!-- EMAIL -->
+          <div>
+            <label class="block text-xs tracking-widest uppercase mb-2 opacity-80">
+              Email
+            </label>
+            <input
+              type="email"
+              name="email"
+              required
+              class="w-full bg-transparent border border-white/25 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-white"
+            />
+          </div>
+
+          <!-- BUDGET -->
+          <div>
+            <label class="block text-xs tracking-widest uppercase mb-2 opacity-80">
+              Budget
+            </label>
+            <input
+              type="text"
+              name="budget"
+              placeholder="$200, $400, etc"
+              class="w-full bg-transparent border border-white/25 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-white"
+            />
+          </div>
+
+          <!-- TIMELINE -->
+          <div>
+            <label class="block text-xs tracking-widest uppercase mb-2 opacity-80">
+              When are you looking to get it done
+            </label>
+            <input
+              type="text"
+              name="timeline"
+              placeholder="Soon, next month, specific date"
+              class="w-full bg-transparent border border-white/25 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-white"
+            />
+          </div>
+
+          <!-- SIZE / PLACEMENT -->
+          <div>
+            <label class="block text-xs tracking-widest uppercase mb-2 opacity-80">
+              Size and placement
+            </label>
+            <input
+              type="text"
+              name="size_placement"
+              placeholder="Approx size and body placement"
+              class="w-full bg-transparent border border-white/25 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-white"
+            />
+          </div>
+
+          <!-- IDEA -->
+          <div>
+            <label class="block text-xs tracking-widest uppercase mb-2 opacity-80">
+              Tattoo idea
+            </label>
+            <textarea
+              name="idea"
+              rows="4"
+              placeholder="Flash you like or a custom idea"
+              class="w-full bg-transparent border border-white/25 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-white"
+            ></textarea>
+          </div>
+
+          <!-- FILE -->
+          <div>
+            <label class="block text-xs tracking-widest uppercase mb-2 opacity-80">
+              Reference images
+            </label>
+            <input
+              type="file"
+              name="reference"
+              accept="image/*"
+              class="w-full text-sm file:mr-3 file:px-3 file:py-2 file:border-0 file:rounded-md file:bg-white file:text-black file:text-xs file:uppercase file:tracking-widest file:cursor-pointer"
+            />
+            <p class="mt-2 text-[11px] opacity-60">
+              Optional, but helpful.
+            </p>
+          </div>
+
+          <!-- SUBMIT -->
+          <div class="pt-4">
+            <button
+              type="submit"
+              class="w-full sm:w-auto px-10 py-3.5 rounded-full bg-white text-black text-xs sm:text-sm tracking-[0.22em] uppercase border border-white hover:bg-[#c73a1d] hover:border-[#c73a1d] hover:text-white transition-colors duration-300"
+            >
+              Send request
+            </button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-white/10 py-10 text-center text-xs opacity-60">
+  © <span id="year"></span> Ginger Tattts · Dallas, TX
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

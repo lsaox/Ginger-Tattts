@@ -58,20 +58,53 @@
 <!-- MOBILE NAV -->
 <div id="mobileNavOverlay" class="fixed inset-0 z-40 bg-white text-ink hidden">
   <div class="flex flex-col h-full">
-    <div class="flex justify-between items-center px-6 py-4">
+
+    <!-- Top row: logo + close -->
+    <div class="flex justify-between items-center px-6 py-4 border-b border-black/5">
       <span class="font-old text-2xl text-[#c73a1d]">GINGER TATTTS</span>
       <button id="mobileNavClose" class="text-2xl">
         <i class="fa-solid fa-xmark"></i>
       </button>
     </div>
 
-    <div class="flex-1 flex flex-col justify-center items-center gap-6">
-      <a href="#portfolio" class="mobile-nav-link uppercase tracking-[0.22em] hover:text-[#c73a1d]">Portfolio</a>
-      <a href="#about" class="mobile-nav-link uppercase tracking-[0.22em] hover:text-[#c73a1d]">About</a>
-      <a href="#faqs" class="mobile-nav-link uppercase tracking-[0.22em] hover:text-[#c73a1d]">FAQs</a>
+    <!-- Links -->
+    <div class="flex-1 flex flex-col justify-center items-center gap-5 text-center text-sm uppercase tracking-[0.22em]">
+
+      <!-- Main nav links -->
+      <a href="#top" class="mobile-nav-link hover:text-[#c73a1d]">
+        Home
+      </a>
+
+      <a href="portfolio.html" class="mobile-nav-link hover:text-[#c73a1d]">
+        Portfolio
+      </a>
+
+      <a href="Flash.html" class="mobile-nav-link hover:text-[#c73a1d]">
+        Flash
+      </a>
+
+      <a href="contact.html" class="mobile-nav-link hover:text-[#c73a1d]">
+        Book / Contact
+      </a>
+
+      <!-- Divider -->
+      <div class="h-px w-14 bg-black/10 my-3"></div>
+
+      <!-- Phone + IG -->
+      <a href="tel:+14696689733" class="mobile-nav-link flex items-center gap-2 hover:text-[#c73a1d]">
+        <i class="fa-solid fa-phone text-base"></i>
+        <span>(469) 668-9733</span>
+      </a>
+
+      <a href="https://instagram.com/gingertattts" target="_blank"
+         class="mobile-nav-link flex items-center gap-2 hover:text-[#c73a1d]">
+        <i class="fa-brands fa-instagram text-base"></i>
+        <span>@gingertattts</span>
+      </a>
     </div>
   </div>
 </div>
+
 
 <!-- HERO -->
 <section id="top" class="relative min-h-screen flex flex-col">
@@ -297,151 +330,166 @@
 
 <!-- INSTAGRAM -->
 
-
 <!-- BOOKING / CONTACT -->
-<section id="booking" class="relative py-28 bg-black text-white overflow-hidden">
+<section id="booking" class="relative bg-black text-white overflow-hidden py-28">
+  <div class="max-w-6xl mx-auto px-4">
 
-  <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-14 items-start">
-
-    <!-- IMAGE SIDE -->
-    <div class="order-2 md:order-1">
-      <img
-        src="assets/artists.png"
-        alt="Tattoo work by Ginger Tattts"
-        class="w-full h-auto rounded-2xl object-cover"
-      />
-    </div>
-
-    <!-- FORM SIDE -->
-    <div class="order-1 md:order-2 max-w-xl mx-auto">
-      <h2 class="font-old text-5xl sm:text-6xl mb-6 text-center md:text-left">
+    <!-- MOBILE HEADER (ABOVE IMAGE + FORM) -->
+    <div class="md:hidden max-w-xl mx-auto text-center mb-10">
+      <h2 class="font-old text-5xl sm:text-6xl mb-4">
         Book a tattoo
       </h2>
-
-      <p class="text-sm opacity-85 mb-8 text-center md:text-left leading-relaxed">
-        Fill this out with your idea and I will get back to you with availability.
+      <p class="text-sm opacity-85 leading-relaxed">
+        Fill this out with your idea and I’ll get back to you with availability.
       </p>
+    </div>
 
-      <form
-        name="tattoo-request"
-        method="POST"
-        data-netlify="true"
-        enctype="multipart/form-data"
-        class="space-y-5"
-      >
-        <!-- required for Netlify -->
-        <input type="hidden" name="form-name" value="tattoo-request" />
+    <!-- GRID: IMAGE + FORM -->
+    <div class="grid md:grid-cols-2 gap-14 items-start">
 
-        <!-- NAME -->
-        <div>
-          <label class="block text-xs tracking-widest uppercase mb-2 opacity-80">
-            Name
-          </label>
-          <input
-            type="text"
-            name="name"
-            required
-            class="w-full bg-transparent border border-white/25 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-white"
-          />
-        </div>
+      <!-- IMAGE (MOBILE: BELOW HEADER, ABOVE FORM) -->
+      <div class="order-1 md:order-1">
+        <img
+          src="assets/artists.png"
+          alt="Tattoo work by Ginger Tattts"
+          class="w-full h-auto rounded-2xl object-cover"
+        />
+      </div>
 
-        <!-- EMAIL -->
-        <div>
-          <label class="block text-xs tracking-widest uppercase mb-2 opacity-80">
-            Email
-          </label>
-          <input
-            type="email"
-            name="email"
-            required
-            class="w-full bg-transparent border border-white/25 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-white"
-          />
-        </div>
+      <!-- FORM (DESKTOP: SAME AS BEFORE) -->
+      <div class="order-2 md:order-2 max-w-xl mx-auto">
 
-        <!-- BUDGET -->
-        <div>
-          <label class="block text-xs tracking-widest uppercase mb-2 opacity-80">
-            Budget
-          </label>
-          <input
-            type="text"
-            name="budget"
-            placeholder="$200, $400, etc"
-            class="w-full bg-transparent border border-white/25 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-white"
-          />
-        </div>
-
-        <!-- HOW SOON -->
-        <div>
-          <label class="block text-xs tracking-widest uppercase mb-2 opacity-80">
-            How soon are you wanting to get it done
-          </label>
-          <input
-            type="text"
-            name="timeline"
-            placeholder="This week, next month, specific date"
-            class="w-full bg-transparent border border-white/25 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-white"
-          />
-        </div>
-
-        <!-- SIZING -->
-        <div>
-          <label class="block text-xs tracking-widest uppercase mb-2 opacity-80">
-            Sizing and placement
-          </label>
-          <input
-            type="text"
-            name="size_placement"
-            placeholder="Rough size and where on the body"
-            class="w-full bg-transparent border border-white/25 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-white"
-          />
-        </div>
-
-        <!-- IDEA -->
-        <div>
-          <label class="block text-xs tracking-widest uppercase mb-2 opacity-80">
-            Tattoo idea
-          </label>
-          <textarea
-            name="idea"
-            rows="4"
-            placeholder="Flash you like, custom idea, references, etc"
-            class="w-full bg-transparent border border-white/25 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-white"
-          ></textarea>
-        </div>
-
-        <!-- FILE UPLOAD -->
-        <div>
-          <label class="block text-xs tracking-widest uppercase mb-2 opacity-80">
-            Reference image (optional)
-          </label>
-          <input
-            type="file"
-            name="reference"
-            accept="image/*"
-            class="w-full text-sm file:mr-3 file:px-3 file:py-2 file:border-0 file:rounded-md file:bg-white file:text-black file:text-xs file:uppercase file:tracking-widest file:cursor-pointer"
-          />
-          <p class="mt-2 text-[11px] opacity-60">
-            You can upload reference art, drawings, or healed tattoos you like.
+        <!-- DESKTOP HEADER (ONLY SHOWN MD+) -->
+        <div class="hidden md:block mb-8 text-left">
+          <h2 class="font-old text-5xl sm:text-6xl mb-4">
+            Book a tattoo
+          </h2>
+          <p class="text-sm opacity-85 leading-relaxed">
+            Fill this out with your idea and I’ll get back to you with availability.
           </p>
         </div>
 
-        <!-- SUBMIT -->
-        <div class="pt-2">
-          <button
-            type="submit"
-            class="w-full sm:w-auto px-10 py-3.5 rounded-full bg-white text-black text-xs sm:text-sm tracking-[0.22em] uppercase border border-white hover:bg-[#c73a1d] hover:border-[#c73a1d] hover:text-white transition-colors duration-300"
-          >
-            Submit request
-          </button>
-        </div>
+        <form
+          name="tattoo-request"
+          method="POST"
+          data-netlify="true"
+          enctype="multipart/form-data"
+          class="space-y-5"
+        >
+          <!-- required for Netlify -->
+          <input type="hidden" name="form-name" value="tattoo-request" />
 
-      </form>
+          <!-- NAME -->
+          <div>
+            <label class="block text-xs tracking-widest uppercase mb-2 opacity-80">
+              Name
+            </label>
+            <input
+              type="text"
+              name="name"
+              required
+              class="w-full bg-transparent border border-white/25 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-white"
+            />
+          </div>
+
+          <!-- EMAIL -->
+          <div>
+            <label class="block text-xs tracking-widest uppercase mb-2 opacity-80">
+              Email
+            </label>
+            <input
+              type="email"
+              name="email"
+              required
+              class="w-full bg-transparent border border-white/25 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-white"
+            />
+          </div>
+
+          <!-- BUDGET -->
+          <div>
+            <label class="block text-xs tracking-widest uppercase mb-2 opacity-80">
+              Budget
+            </label>
+            <input
+              type="text"
+              name="budget"
+              placeholder="$200, $400, etc"
+              class="w-full bg-transparent border border-white/25 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-white"
+            />
+          </div>
+
+          <!-- HOW SOON -->
+          <div>
+            <label class="block text-xs tracking-widest uppercase mb-2 opacity-80">
+              How soon are you wanting to get it done
+            </label>
+            <input
+              type="text"
+              name="timeline"
+              placeholder="This week, next month, specific date"
+              class="w-full bg-transparent border border-white/25 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-white"
+            />
+          </div>
+
+          <!-- SIZING -->
+          <div>
+            <label class="block text-xs tracking-widest uppercase mb-2 opacity-80">
+              Sizing and placement
+            </label>
+            <input
+              type="text"
+              name="size_placement"
+              placeholder="Rough size and where on the body"
+              class="w-full bg-transparent border border-white/25 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-white"
+            />
+          </div>
+
+          <!-- IDEA -->
+          <div>
+            <label class="block text-xs tracking-widest uppercase mb-2 opacity-80">
+              Tattoo idea
+            </label>
+            <textarea
+              name="idea"
+              rows="4"
+              placeholder="Flash you like, custom idea, references, etc"
+              class="w-full bg-transparent border border-white/25 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-white"
+            ></textarea>
+          </div>
+
+          <!-- FILE UPLOAD -->
+          <div>
+            <label class="block text-xs tracking-widest uppercase mb-2 opacity-80">
+              Reference image (optional)
+            </label>
+            <input
+              type="file"
+              name="reference"
+              accept="image/*"
+              class="w-full text-sm file:mr-3 file:px-3 file:py-2 file:border-0 file:rounded-md file:bg-white file:text-black file:text-xs file:uppercase file:tracking-widest file:cursor-pointer"
+            />
+            <p class="mt-2 text-[11px] opacity-60">
+              You can upload reference art, drawings, or healed tattoos you like.
+            </p>
+          </div>
+
+          <!-- SUBMIT -->
+          <div class="pt-2">
+            <button
+              type="submit"
+              class="w-full sm:w-auto px-10 py-3.5 rounded-full bg-white text-black text-xs sm:text-sm tracking-[0.22em] uppercase border border-white hover:bg-[#c73a1d] hover:border-[#c73a1d] hover:text-white transition-colors duration-300"
+            >
+              Submit request
+            </button>
+          </div>
+
+        </form>
+      </div>
+
     </div>
-
   </div>
-
 </section>
+
 
 
 
