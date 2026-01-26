@@ -180,8 +180,9 @@
 </div>
 
 <!-- ABOUT -->
+<!-- ABOUT -->
 <section id="about"
-         class="relative py-28 bg-cover bg-center"
+         class="relative py-28 bg-cover bg-center bg-no-repeat bg-black"
          style="background-image:url('assets/about4.png')">
 
   <!-- mobile-only dark overlay -->
@@ -195,22 +196,21 @@
         About
       </h2>
 
- <p class="mb-5 leading-relaxed opacity-95">
-  Hello, I’m Ethan. I tattoo out of Fig Studio TX here in Dallas.
-</p>
+      <p class="mb-5 leading-relaxed opacity-95">
+        Hello, I’m Ethan. I tattoo out of Fig Studio TX here in Dallas.
+      </p>
 
-<p class="mb-5 leading-relaxed opacity-95">
-  I focus on traditional tattooing. Bold lines, classic designs, and tattoos that age the way they’re supposed to.
-</p>
+      <p class="mb-5 leading-relaxed opacity-95">
+        I focus on traditional tattooing. Bold lines, classic designs, and tattoos that age the way they’re supposed to.
+      </p>
 
-<p class="mb-6 leading-relaxed opacity-95">
-  I do both flash and custom work and I care a lot about getting it right. Good placement, clean work, and taking the time it needs to be perfect.
-</p>
+      <p class="mb-6 leading-relaxed opacity-95">
+        I do both flash and custom work and I care a lot about getting it right. Good placement, clean work, and taking the time it needs to be perfect.
+      </p>
 
-<p class="text-xs tracking-widest uppercase opacity-80">
-  Dallas, Texas · Fig Studio TX
-</p>
-
+      <p class="text-xs tracking-widest uppercase opacity-80">
+        Dallas, Texas · Fig Studio TX
+      </p>
     </div>
 
     <!-- IMAGE -->
@@ -369,12 +369,15 @@
           </p>
         </div>
 
-        <form
-          name="tattoo-request"
-          method="POST"
-          data-netlify="true"
-          enctype="multipart/form-data"
-          class="space-y-5"
+       <form
+  name="tattoo-request"
+  method="POST"
+  data-netlify="true"
+  enctype="multipart/form-data"
+  action="/thank-you.html"
+  class="space-y-5"
+>
+
         >
           <!-- required for Netlify -->
           <input type="hidden" name="form-name" value="tattoo-request" />
