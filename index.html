@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GINGER Tattts</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            old: ['"Pirata One"', 'serif'],
+            body: ['Inter', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+<script async src="https://www.instagram.com/embed.js"></script>
+
+  <!-- Fade animation -->
+  <style>
+    .fade-up {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body class="min-h-screen font-body bg-flesh text-ink overflow-x-hidden">
+
+<!-- VIDEO BG -->
+<div class="absolute inset-0 -z-20 pointer-events-none">
+  <video id="bgVideo" autoplay muted playsinline onended="this.pause()"
+         class="w-full h-full object-cover opacity-35">
+    <source src="assets/vid3.mp4" type="video/mp4" />
+  </video>
+</div>
+
+<div class="absolute inset-0 -z-10 bg-gradient-to-b from-flesh via-[#f5d4b5] to-fleshDeep"></div>
+
+<!-- MOBILE NAV -->
+<div id="mobileNavOverlay" class="fixed inset-0 z-40 bg-white text-ink hidden">
+  <div class="flex flex-col h-full">
+    <div class="flex justify-between items-center px-6 py-4">
+      <span class="font-old text-2xl text-[#c73a1d]">GINGER TATTTS</span>
+      <button id="mobileNavClose" class="text-2xl">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="flex-1 flex flex-col justify-center items-center gap-6">
+      <a href="#portfolio" class="mobile-nav-link uppercase tracking-[0.22em] hover:text-[#c73a1d]">Portfolio</a>
+      <a href="#about" class="mobile-nav-link uppercase tracking-[0.22em] hover:text-[#c73a1d]">About</a>
+      <a href="#faqs" class="mobile-nav-link uppercase tracking-[0.22em] hover:text-[#c73a1d]">FAQs</a>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="top" class="relative min-h-screen flex flex-col">
+
+  <header class="relative z-20">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-center relative">
+
+      <div class="absolute left-4 flex gap-3">
+        <a href="tel:(469) 668-9733" class="flex items-center gap-2 hover:opacity-60">
+          <i class="fa-solid fa-phone"></i>
+          <span class="hidden sm:inline"></span>
+        </a>
+        <a href="https://instagram.com/gingertattts" target="_blank"
+           class="h-9 w-9 flex items-center justify-center border rounded-full hover:bg-black hover:text-white">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      </div>
+
+      <span class="font-old text-3xl">GINGER TATTTS</span>
+
+      <nav class="hidden sm:flex absolute right-4 gap-6 text-sm">
+        <a href="portfolio.html">Portfolio</a>
+        <a href="#about">About</a>
+        <a href="Flash.html">Flash</a>
+      </nav>
+
+      <button id="mobileNavToggle" class="sm:hidden absolute right-4 text-2xl">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- HERO IMAGE -->
+  <div class="flex-1 flex items-center justify-center px-4 pt-8 pb-32">
+    <img src="assets/hero3.png"
+         class="max-w-[94%] rounded-[1.5rem]"
+         alt="Ginger Tattts flash" />
+  </div>
+
+  <!-- BUTTONS -->
+  <div class="absolute inset-x-0 bottom-6 sm:bottom-10 z-20">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col items-center gap-4">
+
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="#booking"
+           class="px-10 py-3.5 rounded-full bg-ink text-flesh uppercase tracking-[0.22em]
+                  border border-ink hover:bg-[#c73a1d] hover:text-white">
+          Book Now
+        </a>
+
+        <a href="portfolio.html"
+           class="px-10 py-3.5 rounded-full uppercase tracking-[0.22em]
+                  border-2 border-ink bg-flesh/95 hover:bg-[#c73a1d] hover:text-white">
+          Portfolio
+        </a>
+      </div>
+
+      <p class="text-xs tracking-[0.25em] uppercase opacity-70">
+        Dallas, TX • By appointment only
+      </p>
+    </div>
+  </div>
+
+</section>
+
+<!-- TORN DIVIDER -->
+<div class="w-full -mt-px">
+  <svg class="w-full h-10 text-black" preserveAspectRatio="none" viewBox="0 0 1200 60">
+    <path fill="currentColor"
+          d="M0,20 L80,40 L160,0 L240,45 L320,5 L400,40 L480,0 L560,38 L640,8 L720,42 L800,0 L880,35 L960,5 L1040,40 L1120,10 L1200,30 L1200,60 L0,60 Z" />
+  </svg>
+</div>
+
+<!-- ABOUT -->
+<section id="about"
+         class="relative py-28 bg-cover bg-center"
+         style="background-image:url('assets/about4.png')">
+
+  <!-- mobile-only dark overlay -->
+  <div class="absolute inset-0 bg-black/70 md:bg-transparent pointer-events-none"></div>
+
+  <div class="relative z-10 max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+
+    <!-- TEXT FIRST ON MOBILE -->
+    <div class="order-1 md:order-2 max-w-xl mx-auto text-center text-white">
+      <h2 class="font-old text-5xl md:text-6xl mb-8">
+        About
+      </h2>
+
+ <p class="mb-5 leading-relaxed opacity-95">
+  Hello, I’m Ethan. I tattoo out of Fig Studio TX here in Dallas.
+</p>
+
+<p class="mb-5 leading-relaxed opacity-95">
+  I focus on traditional tattooing. Bold lines, classic designs, and tattoos that age the way they’re supposed to.
+</p>
+
+<p class="mb-6 leading-relaxed opacity-95">
+  I do both flash and custom work and I care a lot about getting it right. Good placement, clean work, and taking the time it needs to be perfect.
+</p>
+
+<p class="text-xs tracking-widest uppercase opacity-80">
+  Dallas, Texas · Fig Studio TX
+</p>
+
+    </div>
+
+    <!-- IMAGE -->
+    <div class="order-2 md:order-1">
+      <img
+        src="assets/artist.png"
+        class="w-full max-w-2xl mx-auto rounded-2xl fade-up"
+        alt="Tattoo artist"
+      />
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+<!-- PORTFOLIO -->
+<section id="portfolio"
+         class="relative py-28 bg-black bg-cover bg-center overflow-hidden"
+         style="background-image:url('assets/portfolio1.png')">
+
+  <div class="relative max-w-6xl mx-auto px-4 space-y-16">
+
+    <!-- TOP ROW -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <img src="assets/1.png"
+           class="w-full h-48 sm:h-56 object-cover rounded-xl fade-up transform transition-transform duration-300 hover:-translate-y-1 hover:scale-105"
+           alt="">
+      <img src="assets/2.png"
+           class="w-full h-48 sm:h-56 object-cover rounded-xl fade-up transform transition-transform duration-300 hover:-translate-y-1 hover:scale-105"
+           alt="">
+      <img src="assets/3.png"
+           class="w-full h-48 sm:h-56 object-cover rounded-xl fade-up transform transition-transform duration-300 hover:-translate-y-1 hover:scale-105"
+           alt="">
+      <img src="assets/4.png"
+           class="w-full h-48 sm:h-56 object-cover rounded-xl fade-up transform transition-transform duration-300 hover:-translate-y-1 hover:scale-105"
+           alt="">
+    </div>
+
+    <!-- CENTER TEXT + BUTTONS (SLOW FADE) -->
+    <div
+      class="text-center text-white max-w-4xl mx-auto fade-up space-y-6"
+      style="transition: opacity 1.6s ease, transform 1.6s ease;"
+    >
+
+      <h2
+        class="font-old text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-none"
+        style="
+          text-shadow:
+            0 6px 28px rgba(0,0,0,0.9),
+            0 0 12px rgba(0,0,0,0.95);
+        "
+      >
+        Portfolio
+      </h2>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+
+        <a
+          href="Portfolio.html"
+          class="px-10 py-4 rounded-full
+                 bg-black/90 text-white
+                 text-xs sm:text-sm
+                 tracking-[0.22em] uppercase
+                 border border-white/30
+                 hover:bg-[#c73a1d] hover:border-[#c73a1d]
+                 transition-colors duration-300"
+        >
+       Gallery
+        </a>
+
+        <a
+          href="https://instagram.com/gingertattts"
+          target="_blank"
+          class="px-10 py-4 rounded-full
+                 bg-white/90 text-black
+                 text-xs sm:text-sm
+                 tracking-[0.22em] uppercase
+                 border border-transparent
+                 hover:bg-white hover:text-black
+                 transition-colors duration-300 inline-flex items-center gap-2"
+        >
+          <i class="fa-brands fa-instagram"></i>
+          Instagram
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- BOTTOM ROW -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <img src="assets/5.png"
+           class="w-full h-48 sm:h-56 object-cover rounded-xl fade-up transform transition-transform duration-300 hover:-translate-y-1 hover:scale-105"
+           alt="">
+      <img src="assets/6.png"
+           class="w-full h-48 sm:h-56 object-cover rounded-xl fade-up transform transition-transform duration-300 hover:-translate-y-1 hover:scale-105"
+           alt="">
+      <img src="assets/7.png"
+           class="w-full h-48 sm:h-56 object-cover rounded-xl fade-up transform transition-transform duration-300 hover:-translate-y-1 hover:scale-105"
+           alt="">
+      <img src="assets/8.png"
+           class="w-full h-48 sm:h-56 object-cover rounded-xl fade-up transform transition-transform duration-300 hover:-translate-y-1 hover:scale-105"
+           alt="">
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- INSTAGRAM -->
+
+
+<!-- BOOKING / CONTACT -->
+<section id="booking" class="relative py-28 bg-black text-white overflow-hidden">
+
+  <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-14 items-start">
+
+    <!-- IMAGE SIDE -->
+    <div class="order-2 md:order-1">
+      <img
+        src="assets/artists.png"
+        alt="Tattoo work by Ginger Tattts"
+        class="w-full h-auto rounded-2xl object-cover"
+      />
+    </div>
+
+    <!-- FORM SIDE -->
+    <div class="order-1 md:order-2 max-w-xl mx-auto">
+      <h2 class="font-old text-5xl sm:text-6xl mb-6 text-center md:text-left">
+        Book a tattoo
+      </h2>
+
+      <p class="text-sm opacity-85 mb-8 text-center md:text-left leading-relaxed">
+        Fill this out with your idea and I will get back to you with availability.
+      </p>
+
+      <form
+        name="tattoo-request"
+        method="POST"
+        data-netlify="true"
+        enctype="multipart/form-data"
+        class="space-y-5"
+      >
+        <!-- required for Netlify -->
+        <input type="hidden" name="form-name" value="tattoo-request" />
+
+        <!-- NAME -->
+        <div>
+          <label class="block text-xs tracking-widest uppercase mb-2 opacity-80">
+            Name
+          </label>
+          <input
+            type="text"
+            name="name"
+            required
+            class="w-full bg-transparent border border-white/25 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-white"
+          />
+        </div>
+
+        <!-- EMAIL -->
+        <div>
+          <label class="block text-xs tracking-widest uppercase mb-2 opacity-80">
+            Email
+          </label>
+          <input
+            type="email"
+            name="email"
+            required
+            class="w-full bg-transparent border border-white/25 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-white"
+          />
+        </div>
+
+        <!-- BUDGET -->
+        <div>
+          <label class="block text-xs tracking-widest uppercase mb-2 opacity-80">
+            Budget
+          </label>
+          <input
+            type="text"
+            name="budget"
+            placeholder="$200, $400, etc"
+            class="w-full bg-transparent border border-white/25 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-white"
+          />
+        </div>
+
+        <!-- HOW SOON -->
+        <div>
+          <label class="block text-xs tracking-widest uppercase mb-2 opacity-80">
+            How soon are you wanting to get it done
+          </label>
+          <input
+            type="text"
+            name="timeline"
+            placeholder="This week, next month, specific date"
+            class="w-full bg-transparent border border-white/25 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-white"
+          />
+        </div>
+
+        <!-- SIZING -->
+        <div>
+          <label class="block text-xs tracking-widest uppercase mb-2 opacity-80">
+            Sizing and placement
+          </label>
+          <input
+            type="text"
+            name="size_placement"
+            placeholder="Rough size and where on the body"
+            class="w-full bg-transparent border border-white/25 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-white"
+          />
+        </div>
+
+        <!-- IDEA -->
+        <div>
+          <label class="block text-xs tracking-widest uppercase mb-2 opacity-80">
+            Tattoo idea
+          </label>
+          <textarea
+            name="idea"
+            rows="4"
+            placeholder="Flash you like, custom idea, references, etc"
+            class="w-full bg-transparent border border-white/25 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-white"
+          ></textarea>
+        </div>
+
+        <!-- FILE UPLOAD -->
+        <div>
+          <label class="block text-xs tracking-widest uppercase mb-2 opacity-80">
+            Reference image (optional)
+          </label>
+          <input
+            type="file"
+            name="reference"
+            accept="image/*"
+            class="w-full text-sm file:mr-3 file:px-3 file:py-2 file:border-0 file:rounded-md file:bg-white file:text-black file:text-xs file:uppercase file:tracking-widest file:cursor-pointer"
+          />
+          <p class="mt-2 text-[11px] opacity-60">
+            You can upload reference art, drawings, or healed tattoos you like.
+          </p>
+        </div>
+
+        <!-- SUBMIT -->
+        <div class="pt-2">
+          <button
+            type="submit"
+            class="w-full sm:w-auto px-10 py-3.5 rounded-full bg-white text-black text-xs sm:text-sm tracking-[0.22em] uppercase border border-white hover:bg-[#c73a1d] hover:border-[#c73a1d] hover:text-white transition-colors duration-300"
+          >
+            Submit request
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- FOOTER -->
+<footer class="relative bg-black text-white border-t border-white/10">
+
+  <div class="max-w-6xl mx-auto px-4 py-20">
+
+    <!-- TOP -->
+    <div class="flex flex-col items-center text-center gap-6 mb-14">
+      <span class="font-old text-4xl sm:text-5xl tracking-wide">
+        GINGER TATTTS
+      </span>
+
+      <p class="text-sm opacity-80 max-w-md leading-relaxed">
+        Traditional tattooing in Dallas.
+        Flash and custom work.
+   
+      </p>
+    </div>
+
+    <!-- MIDDLE -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-10 text-center sm:text-left mb-14">
+
+      <!-- LOCATION -->
+      <div>
+        <h4 class="uppercase tracking-[0.25em] text-xs opacity-70 mb-4">
+          Location
+        </h4>
+        <p class="text-sm leading-relaxed opacity-90">
+          Fig Studio TX<br>
+          Dallas, Texas
+        </p>
+      </div>
+
+      <!-- CONTACT -->
+      <div>
+        <h4 class="uppercase tracking-[0.25em] text-xs opacity-70 mb-4">
+          Contact
+        </h4>
+        <p class="text-sm leading-relaxed opacity-90">
+          <a href="tel:(469) 668-9733" class="hover:opacity-60">
+           (469) 668-9733
+          </a><br>
+          By appointment only
+        </p>
+      </div>
+
+      <!-- SOCIAL -->
+      <div>
+        <h4 class="uppercase tracking-[0.25em] text-xs opacity-70 mb-4">
+          Social
+        </h4>
+
+        <a href="https://instagram.com/gingertattts"
+           target="_blank"
+           class="inline-flex items-center gap-3 text-sm hover:opacity-60">
+          <i class="fa-brands fa-instagram text-lg"></i>
+          @gingertattts
+        </a>
+      </div>
+
+    </div>
+
+    <!-- BOTTOM -->
+    <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs opacity-60">
+
+      <span>
+        © <span id="year"></span> Ginger Tattts
+      </span>
+
+      <a href="https://echelonwebsites.com"
+         target="_blank"
+         class="tracking-widest uppercase hover:opacity-80">
+        Made with care by Echelon
+      </a>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+<!-- JS -->
+<script>
+  bgVideo.playbackRate = 2;
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add("show");
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.25 });
+
+  document.querySelectorAll(".fade-up").forEach(el => observer.observe(el));
+
+  mobileNavToggle.onclick = () => mobileNavOverlay.classList.remove("hidden");
+  mobileNavClose.onclick = () => mobileNavOverlay.classList.add("hidden");
+</script>
+
+</body>
+</html>
