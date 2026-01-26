@@ -182,12 +182,20 @@
 <!-- ABOUT -->
 <!-- ABOUT -->
 <section id="about"
-         class="relative py-28 bg-cover bg-center bg-no-repeat bg-black"
-         style="background-image:url('assets/about4.png')">
+         class="relative py-28 overflow-hidden">
 
-  <!-- mobile-only dark overlay -->
-  <div class="absolute inset-0 bg-black/70 md:bg-transparent pointer-events-none"></div>
+  <!-- BACKGROUND IMAGE LAYER -->
+  <div class="absolute inset-0">
+    <img
+      src="assets/about4.png"
+      alt="Studio background"
+      class="w-full h-full object-cover"
+    />
+    <!-- dark on mobile, lighter on desktop -->
+    <div class="absolute inset-0 bg-black/70 md:bg-transparent"></div>
+  </div>
 
+  <!-- CONTENT -->
   <div class="relative z-10 max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
 
     <!-- TEXT FIRST ON MOBILE -->
@@ -205,7 +213,7 @@
       </p>
 
       <p class="mb-6 leading-relaxed opacity-95">
-        I do both flash and custom work and I care a lot about getting it right. Good placement, clean work, and taking the time it needs to be perfect.
+        I do both flash and custom work and care a lot about getting it right. Good placement, clean work, and taking the time it needs to be perfect.
       </p>
 
       <p class="text-xs tracking-widest uppercase opacity-80">
@@ -224,6 +232,7 @@
 
   </div>
 </section>
+
 
 
 
@@ -378,7 +387,7 @@
   class="space-y-5"
 >
 
-        >
+        
           <!-- required for Netlify -->
           <input type="hidden" name="form-name" value="tattoo-request" />
 
