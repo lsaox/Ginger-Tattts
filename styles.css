@@ -1,0 +1,12 @@
+/* Clean fade-up: opacity only, no transform */
+.fade-up {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+}
+
+/* Whatever class your JS adds when in view – cover common ones */
+.fade-up.visible,
+.fade-up.in-view,
+.fade-up.show {
+  opacity: 1;
+}
