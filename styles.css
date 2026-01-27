@@ -10,3 +10,102 @@
 .fade-up.show {
   opacity: 1;
 }
+ /* ===============================
+   FOOTER ALIGNMENT FIX (iPad)
+   =============================== */
+
+/* Default: center everything */
+footer .grid {
+  text-align: center;
+}
+
+footer .grid > div {
+  align-items: center;
+}
+
+/* Tablet range (iPad portrait + landscape) */
+@media (min-width: 640px) and (max-width: 1023px) {
+  footer .grid {
+    text-align: center;
+  }
+
+  footer .grid > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Desktop only: allow left alignment */
+@media (min-width: 1024px) {
+  footer .grid {
+    text-align: left;
+  }
+
+  footer .grid > div {
+    align-items: flex-start;
+  }
+}
+/* ===============================
+   FOOTER BACKGROUND IMAGE
+   =============================== */
+
+footer {
+  position: relative;
+  background-color: #000; /* fallback */
+  background-image: url("assets/aa.JPG"); /* <-- change filename if needed */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Dark overlay for readability */
+footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.85),
+      rgba(0,0,0,0.9)
+    );
+  z-index: 0;
+}
+
+/* Ensure footer content sits above overlay */
+footer > div {
+  position: relative;
+  z-index: 1;
+}
+/* ===============================
+   FOOTER BOTTOM CENTER FIX
+   =============================== */
+
+footer .pt-8 {
+  text-align: center;
+}
+
+/* Force center on all sizes */
+footer .pt-8 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+/* Prevent Tailwind sm:flex-row override */
+@media (min-width: 640px) {
+  footer .pt-8 {
+    flex-direction: column !important;
+    justify-content: center !important;
+    text-align: center;
+  }
+}
+.font-orbitron {
+  font-family: 'Orbitron', system-ui, sans-serif;
+}
+footer {
+  border-top: none !important;
+}

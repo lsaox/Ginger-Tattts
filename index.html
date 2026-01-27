@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600&display=swap" rel="stylesheet">
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -188,7 +189,7 @@
   <!-- BACKGROUND IMAGE LAYER -->
   <div class="absolute inset-0">
     <img
-      src="assets/about4.png"
+      src="assets/ss.png"
       alt="Studio background"
       class="w-full h-full object-cover"
     />
@@ -235,14 +236,43 @@
 </section>
 
 
-
-
+<!-- BLACK TORN DIVIDER (FIXED) -->
+<div class="relative w-full bg-black -mt-1 z-20 overflow-hidden">
+  <svg
+    class="block w-full h-10"
+    viewBox="0 0 1200 60"
+    preserveAspectRatio="none"
+  >
+    <path
+      fill="#000000"
+      d="M0,25 
+         L80,45 
+         L160,10 
+         L240,50 
+         L320,15 
+         L400,45 
+         L480,10 
+         L560,42 
+         L640,15 
+         L720,48 
+         L800,10 
+         L880,40 
+         L960,15 
+         L1040,45 
+         L1120,18 
+         L1200,32 
+         L1200,60 
+         L0,60 
+         Z"
+    />
+  </svg>
+</div>
 
 
 
 <section id="portfolio"
          class="relative py-28 bg-black bg-cover bg-center overflow-hidden"
-         style="background-image:url('assets/portfolio1.png')">
+         style="background-image:url('assets/portfolio2.png')">
 
   <div class="relative max-w-6xl mx-auto px-4 space-y-16">
 
@@ -564,10 +594,20 @@
   <div class="max-w-6xl mx-auto px-4 py-20">
 
     <!-- TOP -->
-    <div class="flex flex-col items-center text-center gap-6 mb-14">
-      <span class="font-old text-4xl sm:text-5xl tracking-wide">
-        GINGER TATTTS
-      </span>
+   <!-- TOP -->
+<div class="flex flex-col items-center text-center gap-6 mb-14">
+
+  <!-- FOOTER IMAGE -->
+  <img
+  src="assets/fter.png"
+  alt="Ginger Tattts mark"
+  class="w-64 sm:w-72 md:w-80 lg:w-96 opacity-90"
+ />
+
+  <span class="font-old text-4xl sm:text-5xl tracking-wide">
+    GINGER TATTTS
+  </span>
+
 
       <p class="text-sm opacity-80 max-w-md leading-relaxed">
         Traditional tattooing in Dallas.
@@ -622,15 +662,17 @@
     <!-- BOTTOM -->
     <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs opacity-60">
 
-      <span>
-        © <span id="year"></span> Ginger Tattts
-      </span>
+      <span class="tracking-widest uppercase text-xs sm:text-[0.7rem] opacity-70">
+  Made with care by
+  <a
+    href="https://echelonwebsites.com"
+    target="_blank"
+    class="font-orbitron echelon-credit hover:opacity-100"
+  >
+    Echelon
+  </a>
+</span>
 
-      <a href="https://echelonwebsites.com"
-         target="_blank"
-         class="tracking-widest uppercase hover:opacity-80">
-        Made with care by Echelon
-      </a>
 
     </div>
 
